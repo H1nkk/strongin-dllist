@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <vector>
 
-constexpr double r = 2.0;
+constexpr double r = 4.0;
 const double E = 1e-4; // epsilon
 using namespace std;
 
@@ -70,6 +70,6 @@ double AGP(double a, double b, double (*func)(double x)) {
 }
 
 int main() {
-	cout << AGP(1, 2, func);
+	cout << AGP(1, 3, func);
 	return 0;
 }

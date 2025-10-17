@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Programming\\cPP!\\Strongin\\",
+  "WorkspaceRootPath": "D:\\Programming\\cPP!\\strongin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|D:\\Programming\\cPP!\\Strongin\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|D:\\Programming\\cPP!\\strongin\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|solutionrelative:Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
@@ -37,18 +37,17 @@
               "RelativeToolTip": "..\\..\\..\\VisualStudio\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
               "ViewState": "AgIAAHYHAAAAAAAAAAD4v4kHAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-15T21:42:56.953Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T21:42:56.953Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Source.cpp",
-              "DocumentMoniker": "D:\\Programming\\cPP!\\Strongin\\Source.cpp",
+              "DocumentMoniker": "D:\\Programming\\cPP!\\strongin\\Source.cpp",
               "RelativeDocumentMoniker": "Source.cpp",
-              "ToolTip": "D:\\Programming\\cPP!\\Strongin\\Source.cpp",
-              "RelativeToolTip": "Source.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAOAAAAAAAAAA==",
+              "ToolTip": "D:\\Programming\\cPP!\\strongin\\Source.cpp*",
+              "RelativeToolTip": "Source.cpp*",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-15T20:36:35.08Z",
               "EditorCaption": ""
