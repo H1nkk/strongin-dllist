@@ -1,14 +1,46 @@
 #include <iostream>
 #include <cmath>
 #include <algorithm>
+#include <map>
 #include <vector>
 
-constexpr double r = 4.0;
-const double E = 1e-4; // epsilon
 using namespace std;
 
-double func(double x) {
-	return sin(x);
+double r = 2.0; // method parameter
+const double E = 1e-4; // epsilon
+const int a = 2, b = 7; // left and right bounds
+const int ITERMAX = 100;
+
+map<double (*)(double), double> extremums;
+
+double f1(double x) {
+	if (x < (a + b) / 2) return 7 - x;
+	double intersec = 7 - (a + b) / 2;
+	return intersec - (a + b) / 2 + x;
+}
+
+double f2(double x) {
+	return x*sin(x);
+}
+
+double f3(double x) {
+	return x * cos(x);
+}
+
+double f4(double x) {
+	return 354318.0 * x * cos(x);
+}
+
+double f5(double x) {
+	return 3 * x * cos(4 * x);
+}
+
+double f6(double x) {
+	return x * cos(x * x);
+}
+
+double f7(double x) {
+	return -x - a;
 }
 
 double AGP(double a, double b, double (*func)(double x)) {
@@ -19,18 +51,20 @@ double AGP(double a, double b, double (*func)(double x)) {
 	double m;
 
 
-	for (int iteration = 0; iteration < 100; iteration++) {
+	for (int iteration = 0; iteration < ITERMAX; iteration++) {
 		sort(dots.begin(), dots.end());
 
-		M = fabs((func(b) - func(a)) / (b - a));
+		int dotsCount = dots.size();
+
+		M = fabs((value[dotsCount - 1] - value[dotsCount - 2]) / (dots[dotsCount - 2] - dots[dotsCount - 1]));
 
 		value.push_back(0);
 		for (int i = 0; i < dots.size(); i++) {
 			value[i] = func(dots[i]);
 		}
 
-		for (int i = 2; i < dots.size(); i++) {
-			M = max(M, fabs((value[i] - value[i]) / (dots[i] - dots[i - 1])));
+		for (int i = 1; i < dots.size(); i++) {
+			M = max(M, fabs((value[i] - value[i - 1]) / (dots[i] - dots[i - 1])));
 		}
 
 		if (M > 0) {
@@ -43,7 +77,10 @@ double AGP(double a, double b, double (*func)(double x)) {
 		double Rmax = -INFINITY;
 		int minInd = -1;
 		for (int i = 1; i < dots.size(); i++) {
-			R[i - 1] = m * (dots[i] - dots[i - 1]) + (value[i] - value[i - 1]) * (value[i] - value[i - 1]) / (m * (dots[i] - dots[i - 1])) - 2 * (value[i] - value[i - 1]);
+			R[i - 1] = m * (dots[i] - dots[i - 1])
+					   + (value[i] - value[i - 1]) * (value[i] - value[i - 1]) / (m * (dots[i] - dots[i - 1]))
+					   - 2 * (value[i] - value[i - 1]);
+
 			if (R[i - 1] > Rmax) {
 				Rmax = R[i - 1];
 				minInd = i - 1;
@@ -69,7 +106,37 @@ double AGP(double a, double b, double (*func)(double x)) {
 	return res;
 }
 
+double findBestR(double (*testingFuncion)(double)) {
+	cout << fixed;
+
+	double extrPoint = extremums[testingFuncion];
+
+	double best = r, diff = fabs(AGP(a, b, testingFuncion) - extrPoint);
+	for (r = 1.1; r < 100.0; r += 0.1) {
+		double curdiff = fabs(AGP(a, b, testingFuncion) - extrPoint);
+		if (curdiff <= diff) {
+			best = r;
+			diff = curdiff;
+			cout << best << ' ' << diff << '\n';
+			//if (curdiff == 0) break;
+		}
+	}
+
+	cout << best << ' ' << diff << '\n';
+	return best;
+}
+
 int main() {
-	cout << AGP(1, 3, func);
+	extremums[f1] = (a + b) / 2;
+
+	// для a = 2, b = 7:
+	extremums[f2] = 4.91318;
+	extremums[f3] = 3.42562;
+	extremums[f4] = 3.42562;
+	extremums[f5] = 7;
+	extremums[f6] = 6.86546;
+
+	r = findBestR(f6);
+	cout << AGP(a, b, f6);
 	return 0;
 }

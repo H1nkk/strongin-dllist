@@ -5,9 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|D:\\Programming\\cPP!\\strongin\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|solutionrelative:Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\VisualStudio\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -29,25 +26,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "vector",
-              "DocumentMoniker": "D:\\VisualStudio\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
-              "RelativeDocumentMoniker": "..\\..\\..\\VisualStudio\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
-              "ToolTip": "D:\\VisualStudio\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
-              "RelativeToolTip": "..\\..\\..\\VisualStudio\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
-              "ViewState": "AgIAAHYHAAAAAAAAAAD4v4kHAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-15T21:42:56.953Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Source.cpp",
               "DocumentMoniker": "D:\\Programming\\cPP!\\strongin\\Source.cpp",
               "RelativeDocumentMoniker": "Source.cpp",
               "ToolTip": "D:\\Programming\\cPP!\\strongin\\Source.cpp*",
               "RelativeToolTip": "Source.cpp*",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEgAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAIoAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-15T20:36:35.08Z",
               "EditorCaption": ""
