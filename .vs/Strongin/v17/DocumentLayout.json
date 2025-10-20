@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|D:\\Programming\\cPP!\\strongin\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|solutionrelative:Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|D:\\Programming\\cPP!\\strongin\\dllist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|solutionrelative:dllist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,13 +30,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dllist.h",
+              "DocumentMoniker": "D:\\Programming\\cPP!\\strongin\\dllist.h",
+              "RelativeDocumentMoniker": "dllist.h",
+              "ToolTip": "D:\\Programming\\cPP!\\strongin\\dllist.h",
+              "RelativeToolTip": "dllist.h",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAuwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-19T22:12:50.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Source.cpp",
               "DocumentMoniker": "D:\\Programming\\cPP!\\strongin\\Source.cpp",
               "RelativeDocumentMoniker": "Source.cpp",
               "ToolTip": "D:\\Programming\\cPP!\\strongin\\Source.cpp",
               "RelativeToolTip": "Source.cpp",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAuwGYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-15T20:36:35.08Z",
               "EditorCaption": ""

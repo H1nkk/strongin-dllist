@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <map>
 #include <vector>
+#include "dllist.h"
 
 using namespace std;
 
@@ -44,21 +45,36 @@ double f7(double x) {
 }
 
 double AGP(double a, double b, double (*func)(double x)) {
-	vector<double> dots = { a,b };
-	vector<double> value = { func(a), func(b) }; // value[i] = значение функции в точке i 
-	vector<double> R(1);
-	double M;
+	dllist dots({ a,b });
+	int dotsCount = 2;
+
+	dllist value ({ func(a), func(b) }); // value[i] = значение функции в точке i 
+
+	dllist Mcandidates({ (value[dotsCount - 1] - value[dotsCount - 2]) / (dots[dotsCount - 1] - dots[dotsCount - 2]) }); // 
+	double M = Mcandidates[0];
+	int Mindex = 0;
+
 	double m;
 
+	if (M > 0) {
+		m = r * M;
+	}
+	else {
+		m = 1;
+	}
+
+	dllist R({ m * (dots[1] - dots[0]) +
+			   (value[1] - value[0]) * (value[1] - value[0]) / (m * (dots[1] - dots[0])) -
+			   2 * (value[1] - value[0]) });
+	double Rmax = R[0];
+	int Rmaxindex = 0;
 
 	for (int iteration = 0; iteration < ITERMAX; iteration++) {
-		sort(dots.begin(), dots.end());
+		// sort(dots.begin(), dots.end());
 
-		int dotsCount = dots.size();
+		//M = fabs((value[dotsCount - 1] - value[dotsCount - 2]) / (dots[dotsCount - 1] - dots[dotsCount - 2])); надо пересчитывать при добавлении новой точки
 
-		M = fabs((value[dotsCount - 1] - value[dotsCount - 2]) / (dots[dotsCount - 2] - dots[dotsCount - 1]));
-
-		value.push_back(0);
+		/*value.push_back(0);
 		for (int i = 0; i < dots.size(); i++) {
 			value[i] = func(dots[i]);
 		}
@@ -72,11 +88,10 @@ double AGP(double a, double b, double (*func)(double x)) {
 		}
 		else {
 			m = 1;
-		}
+		}*/ // Это всё при добавлении новой точки
 
-		double Rmax = -INFINITY;
-		int minInd = -1;
-		for (int i = 1; i < dots.size(); i++) {
+		
+		/*for (int i = 1; i < dots.size(); i++) {
 			R[i - 1] = m * (dots[i] - dots[i - 1])
 					   + (value[i] - value[i - 1]) * (value[i] - value[i - 1]) / (m * (dots[i] - dots[i - 1]))
 					   - 2 * (value[i] - value[i - 1]);
@@ -85,18 +100,57 @@ double AGP(double a, double b, double (*func)(double x)) {
 				Rmax = R[i - 1];
 				minInd = i - 1;
 			}
-		}
-		R.push_back(0);
-		double newDot = 0.5 * (dots[minInd + 1] + dots[minInd]) - (value[minInd + 1] - value[minInd]) * 0.5 / m;
-		if ((dots[minInd + 1] - dots[minInd]) < E) {
-			dots.push_back(newDot);
+		}*/
+		double newDot = 0.5 * (dots[Rmaxindex + 1] + dots[Rmaxindex]) - (value[Rmaxindex + 1] - value[Rmaxindex]) * 0.5 / m;
+		dots.insert(Rmaxindex + 1, newDot);
+		value.insert(Rmaxindex + 1, func(newDot));
+
+		if ((dots[Rmaxindex + 1] - dots[Rmaxindex]) < E) {
 			break;
 		}
-		dots.push_back(newDot);
+
+		// TODO тут пересчет M для нового интервала:
+		Mcandidates[Rmaxindex] = fabs((value[Rmaxindex + 1] - value[Rmaxindex]) / (dots[Rmaxindex + 1] - dots[Rmaxindex]));
+		Mcandidates.insert(Rmaxindex + 1, fabs((value[Rmaxindex + 2] - value[Rmaxindex + 1]) / (dots[Rmaxindex + 2] - dots[Rmaxindex + 1])));
+		//Mcandidates[Rmaxindex + 1] = fabs((value[Rmaxindex + 2] - value[Rmaxindex + 1]) / (dots[Rmaxindex + 2] - dots[Rmaxindex + 1]));
+
+		// поиск наибольшего M:
+		for (int i = 0; i < Mcandidates.size();i++) {
+			M = max(M, Mcandidates[i]);
+		}
+
+		if (M > 0) {
+			m = r * M;
+		}
+		else {
+			m = 1;
+		}
+
+		// TODO тут пересчет R для нового интервала:
+		int i = 1;
+		R[Rmaxindex + i - 1] = m * (dots[i] - dots[i - 1])
+		+ (value[i] - value[i - 1]) * (value[i] - value[i - 1]) / (m * (dots[i] - dots[i - 1]))
+		- 2 * (value[i] - value[i - 1]);
+		i = 2;
+		R.insert(Rmaxindex + i - 1, m * (dots[i] - dots[i - 1])
+			+ (value[i] - value[i - 1]) * (value[i] - value[i - 1]) / (m * (dots[i] - dots[i - 1]))
+			- 2 * (value[i] - value[i - 1]));
+
+		// поиск наибольшего R:
+		for (int i = 1; i < dots.size(); i++) {
+			if (R[i - 1] > Rmax) {
+				Rmax = R[i - 1];
+				Rmaxindex = i - 1;
+			}
+		}
+		R.insert(Rmaxindex, Rmax);
+
+		dotsCount++;
 	}
 
 	double res = dots[0], funcMin = func(dots[0]);
-	for (auto dot : dots) {
+	for (int i = 0; i < dots.size(); i++) {
+		double dot = dots[i];
 		if (func(dot) < funcMin) {
 			funcMin = func(dot);
 			res = dot;
@@ -127,6 +181,7 @@ double findBestR(double (*testingFuncion)(double)) {
 }
 
 int main() {
+
 	extremums[f1] = (a + b) / 2;
 
 	// для a = 2, b = 7:
@@ -136,7 +191,22 @@ int main() {
 	extremums[f5] = 7;
 	extremums[f6] = 6.86546;
 
-	r = findBestR(f6);
-	cout << AGP(a, b, f6);
+	double (*testingFunction)(double) = f4;
+	r = findBestR(testingFunction);
+	cout << AGP(a, b, testingFunction);
+
+	//vector<double> v{ 4,54,3,123123 };
+	//dllist list({23423,234,234,23,42,34});
+	//list.insert(0, 4);
+	//list.insert(1, 5434);
+	//list.insert(2, 2);
+	//list.insert(3, -543);
+	//list.insert(4, 4522.543);
+
+	//for (int i=0;i<list.size();i++)
+	//	cout << list.get(i)<<' ';
+
+	//list.insert(5, 534);
+	//cout << list.get(list.size() - 1);
 	return 0;
 }
