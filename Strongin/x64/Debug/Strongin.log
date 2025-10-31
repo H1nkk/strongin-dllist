@@ -1,7 +1,5 @@
 ﻿  Source.cpp
-D:\Programming\cPP!\Strongin\dllist.h(27,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\cpp\strongin\dllist.h(31,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Source.cpp')
   
-  Strongin.vcxproj -> D:\Programming\cPP!\strongin\x64\Debug\Strongin.exe
-  "pwsh.exe" не является внутренней или внешней
-  командой, исполняемой программой или пакетным файлом.
+  Strongin.vcxproj -> C:\cpp\strongin\x64\Debug\Strongin.exe
