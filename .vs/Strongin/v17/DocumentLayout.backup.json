@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\cpp\\strongin\\",
+  "WorkspaceRootPath": "D:\\Programming\\cPP!\\strongin-dllist\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|C:\\cpp\\strongin\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|solutionrelative:Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|D:\\Programming\\cPP!\\strongin-dllist\\AGP-dllist.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|solutionrelative:AGP-dllist.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|C:\\cpp\\strongin\\dllist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|D:\\Programming\\cPP!\\strongin-dllist\\dllist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{638ED9CC-2EA5-49AE-8E19-2A12D8F3892A}|Strongin.vcxproj|solutionrelative:dllist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
@@ -29,34 +29,30 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cde3}"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cde3}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "vector",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
-              "RelativeDocumentMoniker": "..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
-              "RelativeToolTip": "..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
-              "ViewState": "AgIAAHwHAAAAAAAAAAAjwIkHAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-31T10:29:18.449Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-31T10:29:18.449Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "dllist.h",
-              "DocumentMoniker": "C:\\cpp\\strongin\\dllist.h",
+              "DocumentMoniker": "D:\\Programming\\cPP!\\strongin-dllist\\dllist.h",
               "RelativeDocumentMoniker": "dllist.h",
-              "ToolTip": "C:\\cpp\\strongin\\dllist.h",
+              "ToolTip": "D:\\Programming\\cPP!\\strongin-dllist\\dllist.h",
               "RelativeToolTip": "dllist.h",
-              "ViewState": "AgIAACQAAAAAAAAAAIAwwDgAAABgAAAAAAAAAA==",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAcwH8AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-10-19T22:12:50.288Z",
               "EditorCaption": ""
@@ -64,12 +60,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Source.cpp",
-              "DocumentMoniker": "C:\\cpp\\strongin\\Source.cpp",
-              "RelativeDocumentMoniker": "Source.cpp",
-              "ToolTip": "C:\\cpp\\strongin\\Source.cpp*",
-              "RelativeToolTip": "Source.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "Title": "AGP-dllist.cpp",
+              "DocumentMoniker": "D:\\Programming\\cPP!\\strongin-dllist\\AGP-dllist.cpp",
+              "RelativeDocumentMoniker": "AGP-dllist.cpp",
+              "ToolTip": "D:\\Programming\\cPP!\\strongin-dllist\\AGP-dllist.cpp",
+              "RelativeToolTip": "AGP-dllist.cpp",
+              "ViewState": "AgIAALQAAAAAAAAAAAAAANsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-15T20:36:35.08Z",
               "EditorCaption": ""

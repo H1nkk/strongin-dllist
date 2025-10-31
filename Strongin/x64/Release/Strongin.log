@@ -1,13 +1,12 @@
-﻿  Source.cpp
-D:\Programming\cPP!\Strongin\Source.cpp(49,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\Programming\cPP!\Strongin\Source.cpp(125,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Programming\cPP!\Strongin\Source.cpp(126,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\Programming\cPP!\Strongin\Source.cpp(127,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+﻿  AGP-dllist.cpp
+D:\Programming\cPP!\strongin-dllist\dllist.h(40,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'AGP-dllist.cpp')
+  
   Generating code
-  2 of 256 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+  1 of 206 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  Strongin.vcxproj -> D:\Programming\cPP!\strongin\x64\Release\Strongin.exe
+  Strongin.vcxproj -> D:\Programming\cPP!\strongin-dllist\x64\Release\Strongin.exe
   "pwsh.exe" не является внутренней или внешней
   командой, исполняемой программой или пакетным файлом.

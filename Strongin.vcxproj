@@ -123,7 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="AGP-dllist.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dllist.h" />

@@ -20,6 +20,15 @@ class dllist {
 	int lastUsedInd; // индекс последней использованной node
 	Node* start;
 	int sz;
+
+	void deleteNode(Node* todel) {
+		if (todel->next != nullptr) {
+			deleteNode(todel->next);
+		}
+		delete todel;
+		
+	}
+
 public:
 	dllist() : sz(0) {
 		start = nullptr;
@@ -35,7 +44,9 @@ public:
 	void insert(int index, double x) { // index на который вставл€ем
 		if (index > sz) throw "dllist index out of range";
 		sz++;
+		int tmpIndex = index;
 		if (index == 0) {
+			lastUsed = nullptr;
 			if (start == nullptr) {
 				start = new Node(x, nullptr, start);
 				return;
@@ -45,22 +56,38 @@ public:
 			start = tmp;
 			return;
 		}
-		lastUsed = nullptr; // можно как-то использовать здесь lastused, пока не буду
+
+
 		Node* cur = start;
+
+		if (lastUsed) {
+			if (index > lastUsedInd) {
+				cur = lastUsed;
+				index -= lastUsedInd;
+			}
+			else if (index == lastUsedInd) {
+				cur = lastUsed->prev;
+				index -= lastUsedInd;
+			}
+			lastUsed = nullptr;
+
+		}
 		while (--index) {
 			cur = cur->next;
 		}
 		Node* tmp = cur->next;
-		cur->next = new Node(x, cur, tmp);
+		Node* newNode = new Node(x, cur, tmp);
+		if (cur->next)
+			cur->next->prev = newNode;
+		cur->next = newNode;
+
 	}
 	double& get(int index) {
-		lastUsed = nullptr; // TODO ”Ѕ–ј“№ ###########################################################
 		int tmpIndex = index;
 		Node* cur = start;
 		if (lastUsed) {
 			if (index >= lastUsedInd) {
 				cur = lastUsed;
-				int tmp = index;
 				index -= lastUsedInd;
 			}
 			else { 
@@ -96,5 +123,8 @@ public:
 	}
 	double& operator[](int index) {
 		return get(index);
+	}
+	~dllist() {
+		deleteNode(start);
 	}
 };
