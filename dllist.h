@@ -21,13 +21,6 @@ class dllist {
 	Node* start;
 	int sz;
 
-	void deleteNode(Node* todel) {
-		if (todel->next != nullptr) {
-			deleteNode(todel->next);
-		}
-		delete todel;
-
-	}
 
 public:
 	dllist() : sz(0) {
@@ -125,6 +118,14 @@ public:
 		return get(index);
 	}
 	~dllist() {
-		deleteNode(start);
+		vector<Node*> toDel(sz);
+		Node* cur = start;
+		for (int i = 0; i < sz; i++) {
+			toDel[i] = cur;
+			cur = cur->next;
+		}
+		for (int i = 0; i < sz; i++) {
+			delete toDel[i];
+		}
 	}
 };
