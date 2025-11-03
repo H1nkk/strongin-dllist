@@ -11,7 +11,7 @@ using namespace std;
 
 double r = 2.0; // method parameter
 const double E = 1e-3; // epsilon
-const int ITERMAX = 500;
+const int ITERMAX = 5000;
 const int TIMEMEASUREITERS = 10;
 const int SLOWINGITERS = 10000;
 
@@ -267,11 +267,11 @@ info AGP(double a, double b, double (*func)(double x)) {
 		dotsCount++;
 	}
 
-	double resArg = dots[0], funcMin = func(dots[0]);
+	double resArg = dots[0], funcMin = value[0];
 	for (int i = 0; i < dots.size(); i++) {
 		double dot = dots[i];
-		if (func(dot) < funcMin) {
-			funcMin = func(dot);
+		if (value[i] < funcMin) {
+			funcMin = value[i];
 			resArg = dot;
 		}
 	}
