@@ -175,14 +175,10 @@ void initMaps() {
 
 info AGP(double a, double b, double (*func)(double x)) {
 	dllist dots({ a,b });
-	int dotsCount = 2;
 
 	dllist value({ func(a), func(b) }); // value[i] = значение функции в точке i 
 
-	dllist Mcandidates({ fabs(value[dotsCount - 1] - value[dotsCount - 2]) / (dots[dotsCount - 1] - dots[dotsCount - 2]) });
-	double M = Mcandidates[0];
-	int Mindex = 0;
-
+	double M = fabs(value[1] - value[0]) / (dots[1] - dots[0]);
 	double m;
 
 	if (M > 0) {
@@ -215,11 +211,11 @@ info AGP(double a, double b, double (*func)(double x)) {
 
 
 		// пересчет M для нового интервала:
-		Mcandidates[Rmaxindex] = fabs((value[Rmaxindex + 1] - value[Rmaxindex]) / (dots[Rmaxindex + 1] - dots[Rmaxindex]));
-		Mcandidates.insert(Rmaxindex + 1, fabs((value[Rmaxindex + 2] - value[Rmaxindex + 1]) / (dots[Rmaxindex + 2] - dots[Rmaxindex + 1])));
+		double Mcandidate1 = fabs((value[Rmaxindex + 1] - value[Rmaxindex]) / (dots[Rmaxindex + 1] - dots[Rmaxindex]));
+		double Mcandidate2 = fabs((value[Rmaxindex + 2] - value[Rmaxindex + 1]) / (dots[Rmaxindex + 2] - dots[Rmaxindex + 1]));
 
 		// поиск наибольшего M:
-		M = max({ M, Mcandidates[Rmaxindex], Mcandidates[Rmaxindex + 1] });
+		M = max({ M, Mcandidate1, Mcandidate2 });
 
 		if (M > 0) {
 			m = r * M;
@@ -264,7 +260,6 @@ info AGP(double a, double b, double (*func)(double x)) {
 			}
 		}
 		prevm = m;
-		dotsCount++;
 	}
 
 	double resArg = dots[0], funcMin = value[0];
